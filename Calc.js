@@ -19,19 +19,6 @@ function OnGUI(){
 	answer = Calculate(inputValue);
 	ViewNumber(answer);
 }
-/*
-function OnGUI(){
-	var inputValue:int = 0;
-	
-	inputValue = ViewButtonAndGetInputValue();
-	ViewNumber(aCalculate(inputValue));
-}
-///demoiishi,
-function OnGUI(){
-	ViewNumber(Calculate(ViewButtonAndGetInputValue()));
-}
-///demoii.    demo,wakaridurakunai?
-*/
 
 function ViewButtonAndGetInputValue(){
 	var inputValue:int=0;
@@ -57,7 +44,9 @@ function ViewButtonAndGetInputValue(){
 
 function Calculate(number:int){
 	
-	if(dispNumber==0){
+	if(number==5 && dispNumber==0){
+		dispNumber = 0;
+	}else if(dispNumber==0){
 		dispNumber = dispNumber + number;
 	}else if(1<=number && number<=2){
 		dispNumber = dispNumber*10 + number;
@@ -68,6 +57,7 @@ function Calculate(number:int){
 	}else if(number==4){
 		dispNumber = 0;
 	}
+	
 	return dispNumber;
 }
 
